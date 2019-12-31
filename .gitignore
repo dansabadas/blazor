@@ -3,3 +3,11 @@
 ################################################################################
 
 *.suo
+*.sqlite
+/getting-started/BethanysPieShopHRMServer/.vs/BethanysPieShopHRMServer
+/getting-started/BethanysPieShopHRMServer/bin/Debug/netcoreapp3.1
+/getting-started/BethanysPieShopHRMServer/obj
+/.vs
+/getting-started/.vs/BethanysPieShopHRMServer/config
+/getting-started/BethanysPieShopHRM.Shared/bin/Debug
+/getting-started/BethanysPieShopHRM.Shared/obj
