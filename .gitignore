@@ -11,3 +11,6 @@
 /getting-started/.vs/BethanysPieShopHRMServer/config
 /getting-started/BethanysPieShopHRM.Shared/bin/Debug
 /getting-started/BethanysPieShopHRM.Shared/obj
+/getting-started/.vs/BethanysPieShopHRMServer/v16/Server/sqlite3
+/getting-started/BethanysPieShopHRM.Api/bin/Debug
+/getting-started/BethanysPieShopHRM.Api/obj
