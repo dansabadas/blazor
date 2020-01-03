@@ -95,19 +95,23 @@ namespace BethanysPieShopHRM.Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(1000)")
+                        .HasMaxLength(1000);
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ExitDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
@@ -119,7 +123,9 @@ namespace BethanysPieShopHRM.Api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<double>("Latitude")
                         .HasColumnType("float");
@@ -171,27 +177,6 @@ namespace BethanysPieShopHRM.Api.Migrations
                             Smoker = false,
                             Street = "Grote Markt 1",
                             Zip = "1000"
-                        },
-                        new
-                        {
-                            EmployeeId = 2,
-                            BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerp",
-                            Comment = "Lorem Ipsum",
-                            CountryId = 2,
-                            Email = "gill@bethanyspieshop.com",
-                            FirstName = "Gill",
-                            Gender = 0,
-                            JobCategoryId = 1,
-                            JoinedDate = new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastName = "Cleeren",
-                            Latitude = 50.850299999999997,
-                            Longitude = 4.3517000000000001,
-                            MaritalStatus = 0,
-                            PhoneNumber = "33999909923",
-                            Smoker = false,
-                            Street = "New Street",
-                            Zip = "2000"
                         });
                 });
 

@@ -1,14 +1,12 @@
-﻿using BethanysPieShopHRM.Server.Services;
+﻿using System;
+using System.Threading.Tasks;
+using BethanysPieShopHRM.Server.Services;
 using BethanysPieShopHRM.Shared;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.Server.Components
 {
-    public class AddEmployeeDialogBase: ComponentBase
+    public class AddEmployeeDialogBase : ComponentBase
     {
         public bool ShowDialog { get; set; }
 
@@ -17,22 +15,16 @@ namespace BethanysPieShopHRM.Server.Components
         [Parameter]
         public EventCallback<bool> CloseEventCallback { get; set; }
 
-        [Inject]
+        [Inject] 
         public IEmployeeDataService EmployeeDataService { get; set; }
 
         public void Show()
         {
-            ResetDialog();
             ShowDialog = true;
             StateHasChanged();
         }
 
-        private void ResetDialog()
-        {
-            Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
-        }
-
-        protected void Close()
+        public void Close()
         {
             ShowDialog = false;
             StateHasChanged();

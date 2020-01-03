@@ -1,40 +1,45 @@
-﻿using BethanysPieShopHRM.Server.Services;
-using BethanysPieShopHRM.Shared;
-using Microsoft.AspNetCore.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BethanysPieShopHRM.Server.Services;
+using BethanysPieShopHRM.Shared;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace BethanysPieShopHRM.Server.Pages
 {
-    public class EmployeeEditBase: ComponentBase
+    public class EmployeeEditBase : ComponentBase
     {
         [Inject]
         public IEmployeeDataService EmployeeDataService { get; set; }
 
         [Inject]
         public ICountryDataService CountryDataService { get; set; }
+
         [Inject]
         public IJobCategoryDataService JobCategoryDataService { get; set; }
 
-        [Inject]
-        public NavigationManager NavigationManager { get; set; }
-
+        [Inject] public NavigationManager NavigationManager { get; set; }
 
         [Parameter]
         public string EmployeeId { get; set; }
 
-        public Employee Employee { get; set; } = new Employee();
-        public List<Country> Countries { get; set; } = new List<Country>();
-        public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
+        public InputText LastNameInputText { get; set; }
 
+        public Employee Employee { get; set; } = new Employee();
+
+        //needed to bind to select to value
         protected string CountryId = string.Empty;
         protected string JobCategoryId = string.Empty;
 
+        //used to store state of screen
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
         protected bool Saved;
+
+        public List<Country> Countries { get; set; } = new List<Country>();
+        public List<JobCategory> JobCategories { get; set; } = new List<JobCategory>();
 
         protected override async Task OnInitializedAsync()
         {
@@ -60,7 +65,6 @@ namespace BethanysPieShopHRM.Server.Pages
 
         protected async Task HandleValidSubmit()
         {
-            Saved = false;
             Employee.CountryId = int.Parse(CountryId);
             Employee.JobCategoryId = int.Parse(JobCategoryId);
 
@@ -87,6 +91,12 @@ namespace BethanysPieShopHRM.Server.Pages
                 Message = "Employee updated successfully.";
                 Saved = true;
             }
+        }
+
+        protected void HandleInvalidSubmit()
+        {
+            StatusClass = "alert-danger";
+            Message = "There are some validation errors. Please try again.";
         }
 
         protected async Task DeleteEmployee()
