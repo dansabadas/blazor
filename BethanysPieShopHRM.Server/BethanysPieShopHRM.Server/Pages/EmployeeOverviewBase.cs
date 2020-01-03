@@ -1,17 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using BethanysPieShopHRM.Server.Components;
+using BethanysPieShopHRM.Server.Services;
+using BethanysPieShopHRM.Shared;
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BethanysPieShopHRM.Shared;
-using BethanysPieShopHRMServer.Components;
-using BethanysPieShopHRMServer.Services;
-using Microsoft.AspNetCore.Components;
 
-namespace BethanysPieShopHRMServer.Pages
+namespace BethanysPieShopHRM.Server.Pages
 {
     public class EmployeeOverviewBase : ComponentBase
     {
-        [Inject] private IEmployeeDataService EmployeeDataService { get; set; }
+        [Inject]
+        public IEmployeeDataService EmployeeDataService { get; set; }
 
+        public IEnumerable<Employee> Employees { get; set; }
         protected AddEmployeeDialog AddEmployeeDialog { get; set; }
 
         protected override async Task OnInitializedAsync()
@@ -19,13 +22,7 @@ namespace BethanysPieShopHRMServer.Pages
             Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
         }
 
-        protected IEnumerable<Employee> Employees { get; set; }
-
-        private List<Country> Countries { get; set; }
-
-        private List<JobCategory> JobCategories { get; set; }
-
-        public async void AddEmployeeDialog_OnDialogClose()
+        protected async void AddEmployeeDialog_OnDialogClose()
         {
             Employees = (await EmployeeDataService.GetAllEmployees()).ToList();
             StateHasChanged();
