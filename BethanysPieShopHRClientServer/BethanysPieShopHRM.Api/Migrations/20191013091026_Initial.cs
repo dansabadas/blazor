@@ -46,17 +46,15 @@ namespace BethanysPieShopHRM.Api.Migrations
                     Street = table.Column<string>(nullable: true),
                     Zip = table.Column<string>(nullable: true),
                     City = table.Column<string>(nullable: true),
-                    CountryId = table.Column<int>(nullable: false),
                     PhoneNumber = table.Column<string>(nullable: true),
+                    CountryId = table.Column<int>(nullable: false),
                     Smoker = table.Column<bool>(nullable: false),
                     MaritalStatus = table.Column<int>(nullable: false),
                     Gender = table.Column<int>(nullable: false),
-                    Comment = table.Column<string>(nullable: true),
                     JoinedDate = table.Column<DateTime>(nullable: true),
                     ExitDate = table.Column<DateTime>(nullable: true),
                     JobCategoryId = table.Column<int>(nullable: false),
-                    Latitude = table.Column<double>(nullable: false),
-                    Longitude = table.Column<double>(nullable: false)
+                    Comment = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -109,13 +107,8 @@ namespace BethanysPieShopHRM.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Employees",
-                columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "CountryId", "Email", "ExitDate", "FirstName", "Gender", "JobCategoryId", "JoinedDate", "LastName", "Latitude", "Longitude", "MaritalStatus", "PhoneNumber", "Smoker", "Street", "Zip" },
-                values: new object[] { 1, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Brussels", "Lorem Ipsum", 1, "bethany@bethanyspieshop.com", null, "Bethany", 1, 1, new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Smith", 50.850299999999997, 4.3517000000000001, 1, "324777888773", false, "Grote Markt 1", "1000" });
-
-            migrationBuilder.InsertData(
-                table: "Employees",
-                columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "CountryId", "Email", "ExitDate", "FirstName", "Gender", "JobCategoryId", "JoinedDate", "LastName", "Latitude", "Longitude", "MaritalStatus", "PhoneNumber", "Smoker", "Street", "Zip" },
-                values: new object[] { 2, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Antwerp", "Lorem Ipsum", 2, "gill@bethanyspieshop.com", null, "Gill", 0, 1, new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "Cleeren", 50.850299999999997, 4.3517000000000001, 0, "33999909923", false, "New Street", "2000" });
+                columns: new[] { "EmployeeId", "BirthDate", "City", "Comment", "CountryId", "Email", "ExitDate", "FirstName", "Gender", "JobCategoryId", "JoinedDate", "LastName", "MaritalStatus", "PhoneNumber", "Smoker", "Street", "Zip" },
+                values: new object[] { 1, new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "Brussels", "Lorem Ipsum", 1, "bethany@bethanyspieshop.com", null, "Bethany", 1, 1, new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Smith", 1, "324777888773", false, "Grote Markt 1", "1000" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Employees_CountryId",

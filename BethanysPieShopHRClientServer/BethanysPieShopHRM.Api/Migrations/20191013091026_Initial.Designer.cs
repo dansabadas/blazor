@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BethanysPieShopHRM.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191101211029_Initial")]
+    [Migration("20191013091026_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,12 +123,6 @@ namespace BethanysPieShopHRM.Api.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Longitude")
-                        .HasColumnType("float");
-
                     b.Property<int>("MaritalStatus")
                         .HasColumnType("int");
 
@@ -166,34 +160,11 @@ namespace BethanysPieShopHRM.Api.Migrations
                             JobCategoryId = 1,
                             JoinedDate = new DateTime(2015, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             LastName = "Smith",
-                            Latitude = 50.850299999999997,
-                            Longitude = 4.3517000000000001,
                             MaritalStatus = 1,
                             PhoneNumber = "324777888773",
                             Smoker = false,
                             Street = "Grote Markt 1",
                             Zip = "1000"
-                        },
-                        new
-                        {
-                            EmployeeId = 2,
-                            BirthDate = new DateTime(1979, 1, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            City = "Antwerp",
-                            Comment = "Lorem Ipsum",
-                            CountryId = 2,
-                            Email = "gill@bethanyspieshop.com",
-                            FirstName = "Gill",
-                            Gender = 0,
-                            JobCategoryId = 1,
-                            JoinedDate = new DateTime(2017, 12, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            LastName = "Cleeren",
-                            Latitude = 50.850299999999997,
-                            Longitude = 4.3517000000000001,
-                            MaritalStatus = 0,
-                            PhoneNumber = "33999909923",
-                            Smoker = false,
-                            Street = "New Street",
-                            Zip = "2000"
                         });
                 });
 
