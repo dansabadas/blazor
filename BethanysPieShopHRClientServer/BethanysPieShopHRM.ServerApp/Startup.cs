@@ -24,20 +24,21 @@ namespace BethanysPieShopHRM.ServerApp
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSignalR().AddAzureSignalR(
+                "Endpoint=https://bethanyspieshophrmsignalrdanson.service.signalr.net;AccessKey=4YUlOwUSQRl7vBYsmda8bgGXpuAh+O7c+PwocTTnlYY=;Version=1.0;");
 
-        
             //services.AddScoped<IEmployeeDataService, MockEmployeeDataService>();
             services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
             {
-                client.BaseAddress = new Uri("https://localhost:44340/");
+                client.BaseAddress = new Uri("https://bethanyspieshophrmapi20200107114511.azurewebsites.net/");
             });
             services.AddHttpClient<ICountryDataService, CountryDataService>(client =>
             {
-                client.BaseAddress = new Uri("https://localhost:44340/");
+                client.BaseAddress = new Uri("https://bethanyspieshophrmapi20200107114511.azurewebsites.net/");
             });
             services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client =>
             {
-                client.BaseAddress = new Uri("https://localhost:44340/");
+                client.BaseAddress = new Uri("https://bethanyspieshophrmapi20200107114511.azurewebsites.net/");
             });
         }
 

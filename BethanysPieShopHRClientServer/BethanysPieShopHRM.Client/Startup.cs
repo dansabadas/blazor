@@ -10,16 +10,19 @@ namespace BethanysPieShopHRM.ClientApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<HttpClient>(s =>
+            services.AddScoped(s => new HttpClient
             {
-                var client = new HttpClient(){ BaseAddress = new System.Uri("https://localhost:44340/") };
-                return client;
-            });
+                BaseAddress = new System.Uri("https://bethanyspieshophrmapi20200107114511.azurewebsites.net/")
+            }); //https://bethanyspieshophrmapi20200107114511.azurewebsites.net/ https://localhost:44340/
 
             //services.AddScoped<IEmployeeDataService, MockEmployeeDataService>();
             services.AddScoped<IEmployeeDataService, EmployeeDataService>();
             services.AddScoped<ICountryDataService, CountryDataService>();
             services.AddScoped<IJobCategoryDataService, JobCategoryDataService>();
+
+            services
+                .AddSignalR()
+                .AddAzureSignalR("Endpoint=https://bethanyspieshophrmsignalrdanson.service.signalr.net;AccessKey=4YUlOwUSQRl7vBYsmda8bgGXpuAh");
         }
 
         public void Configure(IComponentsApplicationBuilder app)

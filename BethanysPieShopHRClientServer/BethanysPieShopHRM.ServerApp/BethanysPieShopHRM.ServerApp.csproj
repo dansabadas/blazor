@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.SignalR" Version="1.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BethanysPieShopHRM.Server\BethanysPieShopHRM.Server.csproj" />
   </ItemGroup>
 
