@@ -25,7 +25,6 @@ namespace BethanysPieShopHRM.ServerApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-        
             //services.AddScoped<IEmployeeDataService, MockEmployeeDataService>();
             services.AddHttpClient<IEmployeeDataService, EmployeeDataService>(client =>
             {

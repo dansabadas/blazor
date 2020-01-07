@@ -10,9 +10,9 @@ namespace BethanysPieShopHRM.ClientApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<HttpClient>(s =>
+            services.AddScoped(s =>
             {
-                var client = new HttpClient(){ BaseAddress = new System.Uri("https://localhost:44340/") };
+                var client = new HttpClient{ BaseAddress = new System.Uri("https://localhost:44340/") };
                 return client;
             });
 

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Componen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.ClientApp", "BethanysPieShopHRM.Client\BethanysPieShopHRM.ClientApp.csproj", "{77FBFA26-EDCE-4641-B9EC-C762B3373B6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopHRM.ServerApp", "BethanysPieShopHRM.ServerApp\BethanysPieShopHRM.ServerApp.csproj", "{2030E411-22F7-4BB2-ABE4-D46822FC6BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.ServerApp", "BethanysPieShopHRM.ServerApp\BethanysPieShopHRM.ServerApp.csproj", "{2030E411-22F7-4BB2-ABE4-D46822FC6BD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
