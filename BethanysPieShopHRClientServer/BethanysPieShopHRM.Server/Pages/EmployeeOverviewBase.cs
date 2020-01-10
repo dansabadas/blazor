@@ -20,7 +20,7 @@ namespace BethanysPieShopHRM.Server.Pages
         [Inject]
         public ICountryDataService CountryDataService { get; set; }
 
-        public List<Employee> Employees { get; set; }
+        public List<EmployeeModel> Employees { get; set; }
         public List<Country> Countries { get; set; }
 
         public AddEmployeeDialogBase AddEmployeeDialog { get; set; }
